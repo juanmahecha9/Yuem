@@ -99,12 +99,9 @@ cd src/views && touch index.html && echo "
     crossorigin='anonymous'></script>
 
 </html>
-
-
-" >index.html
+" > index.html
 cd .. && cd public && mkdir css && cd css && touch index.css
-echo "
-@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@700&family=Satisfy&family=Shadows+Into+Light+Two&display=swap');
+echo "@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@700&family=Satisfy&family=Shadows+Into+Light+Two&display=swap');
 
 body {
   text-align: center;
@@ -117,21 +114,6 @@ body {
   height: 400px;
   position: relative;
   background: #29abe2;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #29abe2 1%, #077cc3 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #29abe2), color-stop(100%, #077cc3));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #29abe2 1%, #077cc3 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #29abe2 1%, #077cc3 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #29abe2 1%, #077cc3 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #29abe2 1%, #077cc3 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#29abe2', endColorstr='#077cc3',GradientType=0);
-  /* IE6-9 */
   border-radius: 15% 15% 20% 20%;
   margin: 3% auto;
   text-align: center;
@@ -145,7 +127,7 @@ body {
   border-radius: 10%;
   position: relative;
   top: 50px;
-  animation: cd-bounce-1 0.8s;
+  animation: zoom 0.8s;
 }
 .square::after {
   content: '{';
@@ -155,17 +137,17 @@ body {
   left: 30px;
   top: -50px;
   color: #000;
-  animation: cd-bounce-1 2s;
+  animation: zoom 2s;
 }
 .square::before {
   content: '}';
   font-size: 270px;
-  font-weight: 900;
+  font-weight: 800;
   position: absolute;
   right: 30px;
   top: -50px;
   color: #000;
-  animation: cd-bounce-1 2s;
+  animation: zoom 2s;
 }
 .square .img{
   margin-top: 90px;
@@ -183,21 +165,21 @@ b {
 }
 #logo-brackets {
   visibility: visible;
-  animation: cd-bounce-1 1s;
+  animation: zoom 1s;
 }
-@keyframes cd-bounce-1 {
+@keyframes zoom {
   0% {
-    opacity: 0;
     transform: scale(1);
   }
   60% {
-    opacity: 1;
-    transform: scale(3);
+    opacity: 0.5;
+    transform: scale(2);
   }
   100% {
     transform: scale(1);
   }
 }
+
 " > index.css
 cd ..
 cd ..
@@ -214,7 +196,7 @@ modules/.vscode
 node_modules
 # Ignore .history for the xyz.local-history VSCode extension
 .history
-">.gitignore
+" > .gitignore
 
 #Creación de las rutas iniciales
 cd src/routes && touch routes.js && echo "
@@ -228,7 +210,7 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
-"> routes.js
+" > routes.js
 
 #Descargar imagen y logo del programa
 cd ..
