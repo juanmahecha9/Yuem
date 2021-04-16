@@ -22,6 +22,15 @@ cd $projectName
 npm init -y
 npm i express morgan path cors nodemailer && npm i -D nodemon
 npm audit
+
+#modificar archivo package.json
+npm install json
+json --in-place -f package.json -e 'this.scripts={
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node index.js",
+  "dev" : "nodemon index.js"
+}'
+
 mkdir src
 cd src
 mkdir views public private helpers routes
