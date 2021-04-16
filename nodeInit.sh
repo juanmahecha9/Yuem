@@ -91,7 +91,7 @@ cd src/views && touch index.html && echo "
         <div class='square'>
             <img class='img' src='images/yuem.jpg' alt='YUEM'>
         </div>
-        <b>By JuanMahecha9</b>
+        <b><a class='github' href='https://github.com/juanmahecha9' target='_blank'>By Juanmahecha9</a></b>
     </div>
 
     <!-- Fin -->
@@ -164,10 +164,17 @@ body {
   margin-left: 6.5px;
 }
 b {
-  color: #e7dfdd;
   font-size: 50px;
   position: relative;
   top: 150px;
+}
+.github{
+  color: #e7dfdd;
+  text-decoration: none;
+}
+.github:hover{
+  color: #e7dfdd;
+  text-decoration: underline;
 }
 #logo-brackets {
   visibility: hidden;
