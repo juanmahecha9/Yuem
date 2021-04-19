@@ -1,6 +1,8 @@
 #!/bin/bash
 set -fueo pipefail
 
+#Codigo yuem version 0.0.1
+
 # Ingreso del nombre del proyecto
 echo 'Project Name:'
 read projectName
