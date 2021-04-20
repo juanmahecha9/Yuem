@@ -101,7 +101,7 @@ break;;
 pug) 
 sh ./scripts/yuem-pug.sh
 break;;
-hbs)
+handlebars)
 sh ./scripts/yuem-hbs.sh
  break;;
 esac

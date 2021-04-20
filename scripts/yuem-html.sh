@@ -13,6 +13,7 @@ function main(){
     codeIndexHTML
     CodeIndexCSS
     rutaInicial
+    controllers
     gitignore
     imagesDownload
     pwd
@@ -42,8 +43,8 @@ function nodeInit(){
     cd $projectName
     #Creación de Node.js
     npm init -y
-    npm i express morgan path cors nodemailer
-     npm i -D nodemon
+    npm i express morgan path cors nodemailer 
+    npm i -D nodemon
     npm audit
 }
 
@@ -62,7 +63,7 @@ function modificarPackageJson(){
 function crearEsqueletoProyecto(){(
         mkdir src
         cd src
-        mkdir views public private helpers routes database doc
+        mkdir views public private helpers routes database doc controllers
 )}
 
 function codeIndexJS(){
@@ -252,11 +253,33 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("index.html");
-});
+//importar controllers
+const { renderIndex } = require("../controllers/controllers.js")
+
+router.get("/", renderIndex );
 
 module.exports = router;
+EOF
+)}
+
+#Creacion de los controladores
+function controllers(){(
+    cd src/controllers
+    touch controllers.js
+    tee -a controllers.js << EOF
+//controllers
+const indexCtrl = {};
+
+//Aquí se colocan las funciones que realizan en cada peticion
+indexCtrl.renderIndex = (req, res) => {
+    res.render('index',{
+        title: 'yuem-pug',
+        url: 'Juanmahecha9'
+    })
+}
+
+//Exportar
+module.exports = indexCtrl;
 EOF
 )}
 
