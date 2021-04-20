@@ -8,7 +8,7 @@ YUEM by Juanmahecha9
 
 Yuem es un proyecto que se enfoca en generar un proyecto generico de Node.js, en donde se enfoca en la optimizacion de tiempo para la creacion de pequeños proyectos.
 
-  
+El proyecto genera la opcion de creación de frontend usando plantillas como lo son pug, hanblebars y un backend con el uso de node.js
 
 ## ¿Cómo ejecutar?
 
