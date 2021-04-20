@@ -42,7 +42,8 @@ function nodeInit(){
     cd $projectName
     #Creación de Node.js
     npm init -y
-    npm i express morgan path cors nodemailer && npm i -D nodemon
+    npm i express morgan path cors nodemailer
+     npm i -D nodemon
     npm audit
 }
 
@@ -61,7 +62,7 @@ function modificarPackageJson(){
 function crearEsqueletoProyecto(){(
         mkdir src
         cd src
-        mkdir views public private helpers routes
+        mkdir views public private helpers routes database doc
 )}
 
 function codeIndexJS(){
@@ -83,6 +84,7 @@ app.set("port", process.env.PORT || 4000);
 // Load static files
 app.use(express.static(path.join(__dirname, "/src/views")));
 app.use(express.static(path.join(__dirname, "/src/public")));
+app.set('view engine', 'html');
 
 app.use(express.urlencoded({ extended: false }));
 
