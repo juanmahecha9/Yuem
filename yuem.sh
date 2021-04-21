@@ -104,4 +104,7 @@ break;;
 handlebars)
 sh ./scripts/yuem-hbs.sh
  break;;
+ ejs)
+ sh ./scripts/yuem-ejs.sh
+ break;;
 esac
