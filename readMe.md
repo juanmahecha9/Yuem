@@ -11,18 +11,15 @@ Yuem es un proyecto que se enfoca en generar un proyecto generico de Node.js, en
 El proyecto genera la opcion de creación de frontend usando plantillas como lo son pug, hanblebars y un backend con el uso de node.js
 
 ## ¿Cómo ejecutar?
-
   
 
-Para sistemas Linux o MacOs, antes de ejecutar usar el comando 
-`cd scripts` sigiamente ejecutar `chmod +x permisos.sh`, donde se le dara el permiso necesario darle permisos a los demas scripts necesarios, seguido ejecutar el comando `sh permisos.sh` el cual ejecutara los permisos de los scripts del prpyecto..
+Para sistemas Linux o MacOs, antes de ejecutar usar el comando `sh yuem.sh` se debe de ejecutar `chmod +x permisos.sh`,el cual da el permiso de ejecución para el archivo de permisos; seguido ejecutar el comando `sh permisos.sh` donde se le darán los permisos necesarios para los archivos de ejecución del proyecto,
 
-Al otorgar los permisos desde la terminal usar el comando `sh yuem` ó `./yuem.sh`, si se requiere ver que es lo que sucede internamente del programa durante la ejecución del programa usar el comando `sh -vx ./yuem.sh`.
+Al otorgar los permisos a los archivos, desde la terminal usar el comando `sh yuem.sh` ó `./yuem.sh`, si se requiere ver que es lo que sucede internamente del programa durante la ejecución del programa usar el comando `sh -vx ./yuem.sh`, seguido seleccionar el tipo de engine template a usar y darle nombre al proyecto.
 
   
 
 ## Ejecución del programa node.js
-
   
 
 La ejecución del programa se ejecuta con los siguientes comandos:
