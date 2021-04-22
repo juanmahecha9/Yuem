@@ -1,2 +1,13 @@
 #Archivos a ignorar 
 .DS_Store
+
+#ignorar carpetas creadas por yuem
+# 1. yuem-html
+yuem-html
+# 2. yuem-pug
+yuem-pug
+# 3. yuem-hbs
+yuem-hbs
+# 4. yuem-ejs
+yuem-ejs
+
