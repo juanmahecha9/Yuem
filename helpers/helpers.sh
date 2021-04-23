@@ -6,6 +6,10 @@ function main(){
     #Crear archivo CSS
     CodeIndexCSS
     
+    #Archivos de envio de correo
+    emailConfigJson
+    emailSender
+
     imagesDownload
     gitignore
 }
@@ -127,6 +131,57 @@ function imagesDownload(){(
         cd images
         curl -O https://res.cloudinary.com/yuem1/image/upload/v1618457947/yuem.jpg
         curl -O https://res.cloudinary.com/yuem1/image/upload/v1618458569/yuem-icon.jpg
+)}
+
+#Crear archivo private mail
+function emailConfigJson(){(
+        cd src/private
+        touch emailData.json
+  tee -a emailData.json << EOF
+  {
+    "email": "email",
+    "password": "password"
+  }
+EOF
+)}
+
+#Funcion de correo electronico
+function emailSender(){(
+        cd src/helpers
+        touch emailSender.js
+  tee -a emailSender.js << EOF
+  const nodemailer = require("nodemailer");
+const config = require("../private/emailData.json");
+
+function emailSend(nombre, correo, texto) {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: config.email,
+      pass: config.password,
+    },
+  });
+
+  let mailOptions = {
+    from: config.email,
+    to: correo,
+    subject: "Prueba Nodemailer",
+    text: "ASUSNTO",
+    html: "TEXTO DE ENVIO"
+      ,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Correo enviado: " + info.response);
+    }
+  });
+}
+
+module.exports = correo;
+EOF
 )}
 
 #Llamar la función main
