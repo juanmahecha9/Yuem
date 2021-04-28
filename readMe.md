@@ -24,10 +24,10 @@ La ejecución del programa se ejecuta con los siguientes comandos:
 1. Enrutamiento a la carpeta del proyecto: `cd Nombre_asiganado_a_la_carpeta`.
 
 2. Ejecución del servidor; para esto se puede usar uno de los siguientes comandos:
-2.1. `npm run start`, comando con el cual se ejecuta el ambiente de pruebas con el uso de nodemon, paquete que monitorea los cambios en el código fuente que se esta desarrollando y automáticamente re inicia el servidor.
-2.2. `npm run serve`, comando que ejecuta el ambiente de pruebas.
-2.3. `npm run build, comando que ejecuta la transpilación del proyecto a el lenguaje de javascript actual, manteniendo el servicio moderno.
-2.4. `npm run clean`, cmando que permite eleminar la carpeta dist actual, para reemplazar por la nueva generada por el comando actual.
+- `npm run start`, comando con el cual se ejecuta el ambiente de pruebas con el uso de nodemon, paquete que monitorea los cambios en el código fuente que se esta desarrollando y automáticamente re inicia el servidor.
+- `npm run serve`, comando que ejecuta el ambiente de pruebas.
+- `npm run build, comando que ejecuta la transpilación del proyecto a el lenguaje de javascript actual, manteniendo el servicio moderno.
+- `npm run clean`, cmando que permite eleminar la carpeta dist actual, para reemplazar por la nueva generada por el comando actual.
 
 
 ### Video de explicación
