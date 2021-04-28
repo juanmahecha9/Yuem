@@ -19,7 +19,7 @@ function main(){
     sh ../helpers/helpers.sh
     
     pwd
-    echo "...SUCCESS!"
+    echo "...🆂🆄🅲🅲🅴🆂🆂❗"
 }
 
 function crearCarpeta(){
