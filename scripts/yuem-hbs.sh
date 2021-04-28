@@ -123,7 +123,7 @@ EOF
 function codeIndexHTML(){(
         #Crear archivos HTML
         cd src/views
-        touch index.pug
+        touch index.hbs
         #Agregar codigo al archivo index
     tee -a index.hbs << EOF
 <!-- Archivo de inicio -->
