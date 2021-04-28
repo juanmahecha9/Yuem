@@ -1,13 +1,13 @@
 #!/bin/bash
 set -fueo pipefail
 
-#Version de codigo YUEM V1.15
+#Version de codigo YUEM V2.15
 #Uso de funciones para organizar creador de proyecto
 
 function main(){
     crearCarpeta
     nodeInit
-    modificarPackageJson
+    
     crearEsqueletoProyecto
     codeIndexJS
     codeIndexHTML
@@ -30,23 +30,23 @@ function crearCarpeta(){
     
     echo "
  EXECUTING:
- __   __  _   _   _____   __  __ 
+ __   __  _   _   _____   __  __
  \ \ / / | | | | | ____| |  \/  |
   \ V /  | | | | |  _|   | |\/| |
    | |   | |_| | | |___  | |  | |
    |_|    \___/  |_____| |_|  |_|
-                                                  
-    _   
-  _| |_ 
+
+    _
+  _| |_
  |_   _|
-   |_|  
-   
-  _____       _   ____  
- | ____|     | | / ___| 
- |  _|    _  | | \___ \ 
+   |_|
+
+  _____       _   ____
+ | ____|     | | / ___|
+ |  _|    _  | | \___ \
  | |___  | |_| |  ___) |
- |_____|  \___/  |____/ 
-                        
+ |_____|  \___/  |____/
+
     "
     # Dealy de carga
     sleep 1
@@ -58,20 +58,16 @@ function nodeInit(){
     npm init -y
     npm i express morgan path cors nodemailer ejs
     npm i -D nodemon
+    #instalación de babel para uso de la ultima version de ecmascript 7
+    npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/polyfill babel-loader
+    npm i @babel/node
+    #modulo para eliminar la carpeta dist si existe 
+    npm i rimraf
+    #revisión de seguridad del conjunto de dependencias de tu proyecto
     npm audit
 }
 
-function modificarPackageJson(){
-    #modificar archivo package.json
-    npm install json
-    json --in-place -f package.json -e 'this.scripts={
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node index.js",
-      "dev" : "nodemon index.js"
-    }'
-    #Verificar que la ruta esta en la carpeta creada
-    pwd
-}
+
 
 function crearEsqueletoProyecto(){(
         mkdir src
@@ -79,26 +75,27 @@ function crearEsqueletoProyecto(){(
         mkdir views public private helpers routes database doc controllers
 )}
 
-function codeIndexJS(){
-    #Crear archivo de configuración index.js dentro de la carpeta principal del proyecto
-    touch index.js
-    #Agregar codigo al archivo index
+function codeIndexJS(){(
+        #Crear archivo de configuración index.js dentro de la carpeta principal del proyecto
+        cd src
+        touch index.js
+        #Agregar codigo al archivo index
         tee -a index.js << EOF
 // Configuración rapida de proyecto Node.js by juanmahecha9
-const express = require("express");
-const morgan = require("morgan");
-const path = require("path");
-const bodyParser = require("body-parser");
+import express from "express";
+import morgan from "morgan";
+import path from "path";
+import bodyParser  from "body-parser";
 
-const router = require("./src/routes/routes.js");
+const router = require("./routes/routes.js");
 
 const app = express();
 
 app.set("port", process.env.PORT || 4000);
 
 // concatenar el directorio de las vistas de motores de plantillas
-app.set('views', path.join(__dirname, 'src/views'));
-app.use(express.static(path.join(__dirname, "src/public")));
+app.set('views', path.join(__dirname, '/views'));
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
@@ -111,8 +108,8 @@ app.listen(app.get("port"), () => {
   console.log("server running at http://localhost:" + app.get("port"));
 });
 EOF
-    pwd #Ruta carpeta principal del proyecto
-}
+        pwd #Ruta carpeta principal del proyecto
+)}
 
 function codeIndexHTML(){(
         #Crear archivos HTML
@@ -177,7 +174,7 @@ function rutaInicial(){(
         touch routes.js
         tee -a routes.js << EOF
 //Configuración de las rutas
-const express = require("express");
+import express from "express";
 
 const router = express.Router();
 

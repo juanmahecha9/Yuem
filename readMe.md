@@ -1,14 +1,11 @@
 YUEM by Juanmahecha9
 
   
-
 ## ¿Que es?
 
-  
+Yuem es un proyecto que se enfoca en generar un proyecto generico de Node.js, en donde su principal objetico es la optimizacion de tiempo para la creacion de pequeños proyectos, utilizando las ultimas versiones de ecmascript 6 con la ayuda de babel, el cual es un transcompilador de JavaScript gratuito y de código abierto que se utiliza principalmente para convertir el código ECMAScript 2015+ en una versión de JavaScript compatible con versiones anteriores que pueden ejecutar los motores JavaScript más antiguos.
 
-Yuem es un proyecto que se enfoca en generar un proyecto generico de Node.js, en donde se enfoca en la optimizacion de tiempo para la creacion de pequeños proyectos.
-
-El proyecto genera la opcion de creación de frontend usando plantillas como lo son pug, hanblebars y un backend con el uso de node.js
+El proyecto genera la opcion de creación de frontend usando motores de plantillas como lo son pug, hanblebars y ejs al igual que HTM5 puro y un backend de node.js.
 
 ## ¿Cómo ejecutar?
   
@@ -27,11 +24,16 @@ La ejecución del programa se ejecuta con los siguientes comandos:
 1. Enrutamiento a la carpeta del proyecto: `cd Nombre_asiganado_a_la_carpeta`.
 
 2. Ejecución del servidor; para esto se puede usar uno de los siguientes comandos:
-2.1. `node index` el cual ejecuta el servidor un unica vez.
-2.2. `npm start` el cual ejecuta el servidor un unica vez.
-2.3. `npm run start`el cual ejecuta el servidor bajo el modulo de nodemon, el cual vigila el sistema de archivos y reinicia automáticamente el proceso.
+2.1. `npm run start`, comando con el cual se ejecuta el ambiente de pruebas con el uso de nodemon, paquete que monitorea los cambios en el código fuente que se esta desarrollando y automáticamente re inicia el servidor.
+2.2. `npm run serve`, comando que ejecuta el ambiente de pruebas.
+2.3. `npm run build, comando que ejecuta la transpilación del proyecto a el lenguaje de javascript actual, manteniendo el servicio moderno.
+2.4. `npm run clean`, cmando que permite eleminar la carpeta dist actual, para reemplazar por la nueva generada por el comando actual.
 
 
 ### Video de explicación
 En el siguiente video se encuentra la explica de como crear un proyecto de este tipo desde ceros:
 https://youtu.be/0PRlBksqK_w
+
+
+
+npm i webpack webpack-cli html-webpack-plugin handlebars-loader image-webpack-loader css-loader mini-css-extract-plugin sass-loader node-sass autoprefixer postcss-loader file-loader webpack-dev-server

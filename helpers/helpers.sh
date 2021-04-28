@@ -3,16 +3,58 @@
 #Aquí se colocan archivos de configuracion que pueden repetirse en todos los scripts
 
 function main(){
+    #modificar archivo package.json
+    modificarPackageJson
+    
+    #Crear archivo de configuracion para uso de babel
+    babelFile
+    
     #Crear archivo CSS
     CodeIndexCSS
     
     #Archivos de envio de correo
     emailConfigJson
     emailSender
-
+    
     imagesDownload
     gitignore
 }
+
+function modificarPackageJson(){(
+        #modificar archivo package.json
+        npm install json
+        json --in-place -f package.json -e 'this.scripts={
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "babel src -d dist --source-maps --copy-files",
+      "serve": "babel-node src/index.js",
+      "start": "nodemon src/index.js --exec babel-node",
+      "clean": "rimraf dist",
+
+        }'
+        #Verificar que la ruta esta en la carpeta creada
+    pwd)
+}
+
+function babelFile(){(
+        touch.babelrc
+  tee -a .babelrc << EOF
+  {
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "edge": "17",
+          "firefox": "60",
+          "chrome": "67",
+          "safari": "11.1"
+        }
+      }
+    ]
+  ]
+}
+EOF
+)}
 
 #Crear el archivo CSS, el cual es el mismo en todos los  engine templates
 function CodeIndexCSS(){(
@@ -150,7 +192,7 @@ function emailSender(){(
         cd src/helpers
         touch emailSender.js
   tee -a emailSender.js << EOF
-  const nodemailer = require("nodemailer");
+  import nodemailer from "nodemailer";
 const config = require("../private/emailData.json");
 
 function emailSend(nombre, correo, texto) {
