@@ -9,7 +9,6 @@ El proyecto genera la opcion de creación de frontend usando motores de plantill
 
 ## ¿Cómo ejecutar?
   
-
 Para sistemas Linux o MacOs, antes de ejecutar usar el comando `sh yuem.sh` se debe de ejecutar `chmod +x permisos.sh`,el cual da el permiso de ejecución para el archivo de permisos; seguido ejecutar el comando `sh permisos.sh` donde se le darán los permisos necesarios para los archivos de ejecución del proyecto,
 
 Al otorgar los permisos a los archivos, desde la terminal usar el comando `sh yuem.sh` ó `./yuem.sh`, si se requiere ver que es lo que sucede internamente del programa durante la ejecución del programa usar el comando `sh -vx ./yuem.sh`, seguido seleccionar el tipo de engine template a usar y darle nombre al proyecto.
@@ -18,7 +17,6 @@ Al otorgar los permisos a los archivos, desde la terminal usar el comando `sh yu
 
 ## Ejecución del programa node.js
   
-
 La ejecución del programa se ejecuta con los siguientes comandos:
 
 1. Enrutamiento a la carpeta del proyecto: `cd Nombre_asiganado_a_la_carpeta`.
@@ -35,5 +33,6 @@ En el siguiente video se encuentra la explica de como crear un proyecto de este 
 https://youtu.be/0PRlBksqK_w
 
 
+# ¿Que son los archivos sh?
 
-npm i webpack webpack-cli html-webpack-plugin handlebars-loader image-webpack-loader css-loader mini-css-extract-plugin sass-loader node-sass autoprefixer postcss-loader file-loader webpack-dev-server
+Los archivos con la extensión SH contienen código para distintos scripts que pueden utilizarse en el intérprete de comandos de Bash de Unix. Estos scripts pueden escribirse también para otros programas de interpretación de comandos, como C-Shell y Bourne Shell.

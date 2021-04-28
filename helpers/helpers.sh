@@ -1,4 +1,5 @@
 #!/bin/bash
+set -fueo pipefail
 
 #Aquí se colocan archivos de configuracion que pueden repetirse en todos los scripts
 
@@ -36,7 +37,7 @@ function modificarPackageJson(){(
 }
 
 function babelFile(){(
-        touch.babelrc
+        touch .babelrc
   tee -a .babelrc << EOF
   {
   "presets": [

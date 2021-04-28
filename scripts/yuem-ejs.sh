@@ -61,13 +61,11 @@ function nodeInit(){
     #instalación de babel para uso de la ultima version de ecmascript 7
     npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/polyfill babel-loader
     npm i @babel/node
-    #modulo para eliminar la carpeta dist si existe 
+    #modulo para eliminar la carpeta dist si existe
     npm i rimraf
     #revisión de seguridad del conjunto de dependencias de tu proyecto
     npm audit
 }
-
-
 
 function crearEsqueletoProyecto(){(
         mkdir src
