@@ -223,7 +223,7 @@ function emailSend(nombre, correo, texto) {
   });
 }
 
-module.exports = correo;
+module.exports = emailSend;
 EOF
 )}
 
